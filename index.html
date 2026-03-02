@@ -1,253 +1,268 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Manoj Achar | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manoj GC | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: 'Segoe UI', sans-serif;
-            scroll-behavior:smooth;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
 
-        body{
-            background:#0a192f;
-            color:white;
-            overflow-x:hidden;
-        }
+body{
+background:linear-gradient(135deg,#0a192f,#020c1b);
+color:white;
+overflow-x:hidden;
+}
 
-        #particles-js{
-            position:fixed;
-            width:100%;
-            height:100%;
-            z-index:-1;
-        }
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
 
-        header{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 60px;
-            position:fixed;
-            width:100%;
-            background:rgba(10,25,47,0.8);
-            backdrop-filter:blur(10px);
-        }
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+position:fixed;
+width:100%;
+background:rgba(10,25,47,0.8);
+backdrop-filter:blur(10px);
+}
 
-        header h2{
-            color:#00e6ff;
-        }
+header h2{
+color:#00e6ff;
+}
 
-        nav a{
-            text-decoration:none;
-            color:white;
-            margin-left:25px;
-            font-size:15px;
-        }
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-size:15px;
+}
 
-        nav a:hover{
-            color:#00e6ff;
-        }
+nav a:hover{
+color:#00e6ff;
+}
 
-        .hero{
-            height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding-top:80px;
-        }
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:80px;
+}
 
-        .profile{
-            width:160px;
-            height:160px;
-            border-radius:50%;
-            border:4px solid #00e6ff;
-            box-shadow:0 0 30px #00e6ff;
-            margin-bottom:20px;
-        }
+.profile{
+width:160px;
+height:160px;
+border-radius:50%;
+border:4px solid #00e6ff;
+box-shadow:0 0 40px #00e6ff;
+margin-bottom:20px;
+}
 
-        .hero h1{
-            font-size:34px;
-            margin-bottom:10px;
-        }
+.hero h1{
+font-size:34px;
+margin-bottom:10px;
+}
 
-        .subtitle{
-            color:#9ca3af;
-            margin-bottom:30px;
-        }
+.typing{
+color:#00e6ff;
+font-weight:bold;
+}
 
-        .buttons a{
-            padding:10px 25px;
-            border-radius:30px;
-            text-decoration:none;
-            margin:10px;
-            font-size:14px;
-            display:inline-block;
-            transition:0.3s;
-        }
+.buttons a{
+padding:10px 25px;
+border-radius:30px;
+text-decoration:none;
+margin:10px;
+font-size:14px;
+display:inline-block;
+transition:0.3s;
+}
 
-        .btn-primary{
-            background:#00e6ff;
-            color:black;
-        }
+.btn-primary{
+background:#00e6ff;
+color:black;
+}
 
-        .btn-outline{
-            border:2px solid #00e6ff;
-            color:#00e6ff;
-        }
+.btn-outline{
+border:2px solid #00e6ff;
+color:#00e6ff;
+}
 
-        .btn-primary:hover{
-            box-shadow:0 0 15px #00e6ff;
-        }
+.btn-primary:hover{
+box-shadow:0 0 20px #00e6ff;
+}
 
-        .btn-outline:hover{
-            background:#00e6ff;
-            color:black;
-        }
+.btn-outline:hover{
+background:#00e6ff;
+color:black;
+}
 
-        section{
-            padding:100px 60px;
-        }
+section{
+padding:100px 60px;
+}
 
-        .section-title{
-            text-align:center;
-            font-size:26px;
-            margin-bottom:40px;
-            color:#00e6ff;
-        }
+.section-title{
+text-align:center;
+font-size:26px;
+margin-bottom:40px;
+color:#00e6ff;
+}
 
-        .cards{
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            flex-wrap:wrap;
-        }
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
 
-        .card{
-            background:#112240;
-            padding:25px;
-            border-radius:10px;
-            width:300px;
-            transition:0.3s;
-        }
+.card{
+background:#112240;
+padding:25px;
+border-radius:10px;
+width:300px;
+transition:0.3s;
+}
 
-        .card:hover{
-            transform:translateY(-8px);
-            box-shadow:0 0 15px rgba(0,230,255,0.4);
-        }
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(0,230,255,0.5);
+}
 
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#112240;
-        }
-
-        @media(max-width:768px){
-            header{
-                padding:15px 20px;
-            }
-            section{
-                padding:80px 20px;
-            }
-        }
-
-    </style>
+footer{
+text-align:center;
+padding:20px;
+background:#112240;
+}
+</style>
 </head>
+
 <body>
 
 <div id="particles-js"></div>
 
 <header>
-    <h2>Manoj GC</h2>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-    </nav>
+<h2>Manoj GC</h2>
+<nav>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#internship">Internship</a>
+<a href="#education">Education</a>
+</nav>
 </header>
 
 <div class="hero">
-    <img src="https://via.placeholder.com/160" class="profile">
-    <h1>Electronics & Telecommunication Engineer</h1>
-    <p class="subtitle">Embedded Systems | IoT | Communication Technologies</p>
+<img src="https://via.placeholder.com/160" class="profile">
+<h1>Electronics & Telecommunication Engineer</h1>
+<p>I am skilled in <span class="typing"></span></p>
 
-    <div class="buttons">
-        <a href="#" class="btn-primary">Download Resume</a>
-        <a href="https://github.com/acharnmanoj" class="btn-outline">GitHub</a>
-        <a href="#" class="btn-outline">LinkedIn</a>
-    </div>
+<div class="buttons">
+<a href="resume.pdf" download class="btn-primary">Download Resume</a>
+<a href="https://github.com/acharnmanoj" class="btn-outline">GitHub</a>
+</div>
 </div>
 
 <section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Programming</h3>
-            <p>C++, Python, SQL</p>
-        </div>
-
-        <div class="card">
-            <h3>Embedded Systems</h3>
-            <p>Arduino, ESP8266, ESP32, Sensor Integration</p>
-        </div>
-
-        <div class="card">
-            <h3>Tools</h3>
-            <p>MATLAB, Simulink, VS Code, Firebase</p>
-        </div>
-    </div>
+<h2 class="section-title">Technical Skills</h2>
+<div class="cards">
+<div class="card">
+<h3>Programming</h3>
+<p>C++, Python, SQL</p>
+</div>
+<div class="card">
+<h3>Embedded Systems</h3>
+<p>Arduino, ESP8266, ESP32</p>
+</div>
+<div class="card">
+<h3>Tools</h3>
+<p>MATLAB, Firebase, VS Code</p>
+</div>
+</div>
 </section>
 
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
+<h2 class="section-title">Projects</h2>
+<div class="cards">
+<div class="card">
+<h3>Smart Glove</h3>
+<p>Sign language to text conversion system.</p>
+</div>
+<div class="card">
+<h3>IoT Patient Monitoring</h3>
+<p>Real-time health monitoring using ESP & Cloud.</p>
+</div>
+<div class="card">
+<h3>Production Dashboard</h3>
+<p>Live monitoring dashboard using Firebase.</p>
+</div>
+</div>
+</section>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Smart Glove</h3>
-            <p>Sign language to text conversion using flex sensors and Bluetooth.</p>
-        </div>
+<section id="internship">
+<h2 class="section-title">Internship</h2>
+<div class="cards">
+<div class="card">
+<h3>UPH Dashboard Development</h3>
+<p>Worked on real-time production dashboard using JS and Firebase integration.</p>
+</div>
+</div>
+</section>
 
-        <div class="card">
-            <h3>IoT Patient Monitoring</h3>
-            <p>Real-time health tracking using ESP and cloud database.</p>
-        </div>
-
-        <div class="card">
-            <h3>Production Dashboard</h3>
-            <p>Live production monitoring using Firebase and JavaScript.</p>
-        </div>
-    </div>
+<section id="education">
+<h2 class="section-title">Education</h2>
+<div class="cards">
+<div class="card">
+<h3>B.E Electronics & Telecommunication</h3>
+<p>2022 - 2026</p>
+</div>
+</div>
 </section>
 
 <footer>
-    © 2026 Manoj GC | Portfolio
+© 2026 Manoj GC | Portfolio
 </footer>
 
 <script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 80 },
-    "color": { "value": "#00e6ff" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.5 },
-    "size": { "value": 3 },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#00e6ff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": { "enable": true, "speed": 2 }
-  }
+particlesJS("particles-js",{
+particles:{
+number:{value:80},
+color:{value:"#00e6ff"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+line_linked:{enable:true,distance:150,color:"#00e6ff",opacity:0.4,width:1},
+move:{enable:true,speed:2}
+}
+});
+
+ScrollReveal().reveal('.card',{
+distance:'50px',
+duration:1000,
+origin:'bottom',
+interval:200
+});
+
+var typed=new Typed(".typing",{
+strings:["Embedded Systems","IoT Development","Dashboard Development","Communication Technologies"],
+typeSpeed:50,
+backSpeed:30,
+loop:true
 });
 </script>
 
