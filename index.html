@@ -4,9 +4,9 @@
 <title>Manoj GC | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <style>
 *{
@@ -18,15 +18,15 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#0a192f,#020c1b);
+background:#0a192f;
 color:white;
 overflow-x:hidden;
 }
 
-#particles-js{
+#network{
 position:fixed;
-width:100%;
-height:100%;
+top:0;
+left:0;
 z-index:-1;
 }
 
@@ -155,7 +155,7 @@ background:#112240;
 
 <body>
 
-<div id="particles-js"></div>
+<canvas id="network"></canvas>
 
 <header>
 <h2>Manoj GC</h2>
@@ -239,17 +239,35 @@ background:#112240;
 </footer>
 
 <script>
-particlesJS("particles-js",{
-particles:{
-number:{value:80},
-color:{value:"#00e6ff"},
-shape:{type:"circle"},
-opacity:{value:0.5},
-size:{value:3},
-line_linked:{enable:true,distance:150,color:"#00e6ff",opacity:0.4,width:1},
-move:{enable:true,speed:2}
+var scene=new THREE.Scene();
+var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+var renderer=new THREE.WebGLRenderer({canvas:document.getElementById("network"),alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+var geometry=new THREE.BufferGeometry();
+var vertices=[];
+for(var i=0;i<600;i++){
+vertices.push(
+Math.random()*400-200,
+Math.random()*400-200,
+Math.random()*400-200
+);
 }
-});
+geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+
+var material=new THREE.PointsMaterial({color:0x00ffff,size:2});
+var points=new THREE.Points(geometry,material);
+scene.add(points);
+
+camera.position.z=250;
+
+function animate(){
+requestAnimationFrame(animate);
+points.rotation.x+=0.0008;
+points.rotation.y+=0.001;
+renderer.render(scene,camera);
+}
+animate();
 
 ScrollReveal().reveal('.card',{
 distance:'50px',
