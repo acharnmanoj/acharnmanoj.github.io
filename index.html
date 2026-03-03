@@ -4,6 +4,7 @@
 <title>Manoj Acharya N | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
@@ -12,62 +13,13 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:'Inter',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#0a192f;
-color:white;
-overflow-x:hidden;
-position:relative;
-}
-
-/* Liquid Blobs */
-.blob{
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#00e6ff,#0044ff);
-border-radius:50%;
-filter:blur(120px);
-opacity:0.5;
-animation:blobMove1 20s infinite alternate ease-in-out;
-z-index:-2;
-}
-
-.blob2{
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#ff00ff,#4400ff);
-border-radius:50%;
-filter:blur(120px);
-opacity:0.4;
-animation:blobMove2 25s infinite alternate ease-in-out;
-z-index:-2;
-}
-
-@keyframes blobMove1{
-0%{transform:translate(-100px,-100px);}
-100%{transform:translate(300px,200px);}
-}
-
-@keyframes blobMove2{
-0%{transform:translate(600px,100px);}
-100%{transform:translate(200px,400px);}
-}
-
-/* Mouse Spotlight */
-.cursor-light{
-position:fixed;
-width:400px;
-height:400px;
-background:radial-gradient(circle,rgba(0,230,255,0.25),transparent 70%);
-border-radius:50%;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:-1;
+background:linear-gradient(135deg,#f8fafc,#e2e8f0);
+color:#0f172a;
 }
 
 /* Header */
@@ -75,26 +27,29 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:25px 80px;
 position:fixed;
 width:100%;
-background:rgba(10,25,47,0.6);
+background:rgba(255,255,255,0.7);
 backdrop-filter:blur(10px);
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+z-index:100;
 }
 
 header h2{
-color:#00e6ff;
+font-weight:600;
 }
 
 nav a{
 text-decoration:none;
-color:white;
-margin-left:25px;
+color:#334155;
+margin-left:30px;
 font-size:15px;
+font-weight:500;
 }
 
 nav a:hover{
-color:#00e6ff;
+color:#2563eb;
 }
 
 /* Hero */
@@ -105,39 +60,37 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding-top:80px;
+padding:0 20px;
 }
 
 .profile{
-width:180px;
-height:180px;
+width:170px;
+height:170px;
 border-radius:50%;
 object-fit:cover;
-object-position:center;
-border:4px solid #00e6ff;
-box-shadow:0 0 25px #00e6ff,0 0 50px rgba(0,230,255,0.5);
-margin-bottom:25px;
-transition:0.4s ease;
-}
-
-.profile:hover{
-transform:scale(1.05);
-box-shadow:0 0 35px #00e6ff,0 0 70px rgba(0,230,255,0.8);
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+margin-bottom:30px;
 }
 
 .hero h1{
-font-size:34px;
+font-size:36px;
+font-weight:700;
 margin-bottom:10px;
 }
 
-.typing{
-color:#00e6ff;
-font-weight:bold;
+.hero p{
+color:#475569;
+font-size:18px;
+margin-bottom:30px;
 }
 
-/* Buttons */
+.typing{
+color:#2563eb;
+font-weight:600;
+}
+
 .buttons a{
-padding:10px 25px;
+padding:12px 28px;
 border-radius:30px;
 text-decoration:none;
 margin:10px;
@@ -147,122 +100,75 @@ transition:0.3s;
 }
 
 .btn-primary{
-background:#00e6ff;
-color:black;
+background:#2563eb;
+color:white;
+box-shadow:0 10px 25px rgba(37,99,235,0.3);
 }
 
 .btn-outline{
-border:2px solid #00e6ff;
-color:#00e6ff;
+border:1.5px solid #2563eb;
+color:#2563eb;
 }
 
 .btn-primary:hover{
-box-shadow:0 0 20px #00e6ff;
+transform:translateY(-3px);
 }
 
 .btn-outline:hover{
-background:#00e6ff;
-color:black;
+background:#2563eb;
+color:white;
 }
 
 /* Sections */
 section{
-padding:120px 80px;
+padding:120px 100px;
 }
 
 .section-title{
-text-align:center;
-font-size:26px;
-margin-bottom:40px;
-color:#00e6ff;
-}
-
-/* ===== PREMIUM SKILLS SECTION ===== */
-
-.skills-header{
-display:flex;
-align-items:center;
-margin-bottom:50px;
-}
-
-.skills-header .line{
-width:5px;
-height:35px;
-background:#00e6ff;
-margin-right:15px;
-border-radius:5px;
-}
-
-.skills-header h2{
 font-size:28px;
+margin-bottom:50px;
+font-weight:600;
 }
 
-.skills-grid{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-}
-
-.skill-card{
-background:rgba(17,34,64,0.8);
-padding:30px;
-border-radius:18px;
-width:320px;
-backdrop-filter:blur(15px);
-transition:0.4s ease;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
-}
-
-.skill-card h3{
-color:#00e6ff;
-margin-bottom:15px;
-}
-
-.skill-card p{
-color:#cbd5e1;
-line-height:1.6;
-}
-
-.skill-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,230,255,0.5);
-}
-
-/* Cards (Other Sections) */
+/* Cards */
 .cards{
 display:flex;
-justify-content:center;
-gap:30px;
+gap:40px;
 flex-wrap:wrap;
 }
 
 .card{
-background:rgba(17,34,64,0.8);
-padding:25px;
-border-radius:15px;
-width:300px;
-transition:0.3s;
-backdrop-filter:blur(10px);
+background:white;
+padding:35px;
+border-radius:20px;
+width:320px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+transition:0.3s ease;
 }
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 0 20px rgba(0,230,255,0.5);
+}
+
+.card h3{
+margin-bottom:15px;
+font-weight:600;
+}
+
+.card p{
+color:#475569;
+line-height:1.6;
 }
 
 footer{
 text-align:center;
-padding:20px;
-background:rgba(17,34,64,0.8);
+padding:40px;
+color:#64748b;
 }
 </style>
 </head>
 
 <body>
-
-<div class="blob"></div>
-<div class="blob blob2"></div>
-<div class="cursor-light"></div>
 
 <header>
 <h2>Manoj Acharya N</h2>
@@ -277,7 +183,7 @@ background:rgba(17,34,64,0.8);
 <div class="hero">
 <img src="profile.jpg" class="profile">
 <h1>Electronics & Telecommunication Engineer</h1>
-<p>I am skilled in <span class="typing"></span></p>
+<p>I specialize in <span class="typing"></span></p>
 
 <div class="buttons">
 <a href="ResumeMJ.pdf" download class="btn-primary">Download Resume</a>
@@ -286,55 +192,38 @@ background:rgba(17,34,64,0.8);
 </div>
 </div>
 
-<!-- ===== SKILLS SECTION ADDED ===== -->
 <section id="skills">
-
-<div class="skills-header">
-<div class="line"></div>
-<h2>Technical Skills</h2>
-</div>
-
-<div class="skills-grid">
-
-<div class="skill-card">
+<h2 class="section-title">Technical Skills</h2>
+<div class="cards">
+<div class="card">
 <h3>Programming</h3>
 <p>C/C++, Python, SQL, Verilog</p>
 </div>
-
-<div class="skill-card">
+<div class="card">
 <h3>Embedded Systems</h3>
-<p>Arduino, ESP8266, ESP32, RP2040, IoT Integration</p>
+<p>Arduino, ESP32, RP2040, IoT Integration</p>
 </div>
-
-<div class="skill-card">
-<h3>Tools</h3>
-<p>MATLAB, Firebase, Node-RED, VS Code, Proteus</p>
+<div class="card">
+<h3>Tools & Core</h3>
+<p>MATLAB, Firebase, Node-RED, Digital Electronics, VLSI</p>
 </div>
-
-<div class="skill-card">
-<h3>Core Knowledge</h3>
-<p>Digital Electronics, VLSI, Communication Systems, Signal Processing</p>
-</div>
-
 </div>
 </section>
-
-<!-- Rest Sections Same -->
 
 <section id="projects">
 <h2 class="section-title">Projects</h2>
 <div class="cards">
 <div class="card">
-<h3>Asthma Patient Vital Signs Monitoring</h3>
-<p>IoT system using RP2040, Node-RED, Firebase and custom PCB design.</p>
+<h3>Asthma Patient Monitoring</h3>
+<p>IoT-based vital monitoring system with cloud integration.</p>
 </div>
 <div class="card">
-<h3>Smart Ration Distribution System</h3>
-<p>Raspberry Pi 4B based biometric IoT system with MongoDB platform.</p>
+<h3>Smart Ration System</h3>
+<p>Biometric IoT distribution system with Raspberry Pi.</p>
 </div>
 <div class="card">
-<h3>Korean-English NLP Model Benchmarking</h3>
-<p>Transformer based NMT models using HuggingFace and BLEU evaluation.</p>
+<h3>Korean-English NLP Model</h3>
+<p>Transformer based translation benchmarking using BLEU score.</p>
 </div>
 </div>
 </section>
@@ -344,11 +233,11 @@ background:rgba(17,34,64,0.8);
 <div class="cards">
 <div class="card">
 <h3>New Wave Technologies</h3>
-<p>3 Months Internship – IoT Projects & Documentation.</p>
+<p>3 Months – IoT Projects & Documentation.</p>
 </div>
 <div class="card">
 <h3>VB Technologies</h3>
-<p>1 Month Internship – IoT, Cloud & Programming Projects.</p>
+<p>1 Month – IoT & Cloud based development.</p>
 </div>
 </div>
 </section>
@@ -361,32 +250,26 @@ background:rgba(17,34,64,0.8);
 <p>Siddaganga Institute of Technology (2024–Present)</p>
 </div>
 <div class="card">
-<h3>Diploma in Electronics & Communication</h3>
-<p>CGPA: 9.50</p>
+<h3>Diploma – CGPA 9.50</h3>
+<p>Siddaganga Polytechnic</p>
 </div>
 </div>
 </section>
 
 <footer>
-© 2026 Manoj Acharya N | Portfolio
+© 2026 Manoj Acharya N
 </footer>
 
 <script>
-document.addEventListener("mousemove",function(e){
-var light=document.querySelector(".cursor-light");
-light.style.left=e.clientX+"px";
-light.style.top=e.clientY+"px";
-});
-
-ScrollReveal().reveal('.skill-card,.card',{
-distance:'50px',
+ScrollReveal().reveal('.card',{
+distance:'40px',
 duration:1000,
 origin:'bottom',
 interval:200
 });
 
 var typed=new Typed(".typing",{
-strings:["Embedded Systems","IoT Systems","Cloud Integration","Machine Learning","VLSI Basics"],
+strings:["Embedded Systems","IoT Systems","Cloud Integration","Machine Learning"],
 typeSpeed:50,
 backSpeed:30,
 loop:true
